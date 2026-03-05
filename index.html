@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,123 +22,164 @@
 
     <section class="projects" aria-label="Projects">
       <h2>Projects</h2>
-
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/neural-encoding.jpg" alt="Neural information encoding" loading="lazy">
-          <span class="project-badge">Current Research</span>
-        </div>
-        <div class="project-content">
-          <h3>Applied ML for Neural Information Encoding</h3>
-          <p class="project-meta">Computational Neuroscience · Representation Learning</p>
-          <p class="project-desc">Research Assistant at EPFL's Laboratory of Physics of Biological Systems. Developing ML models to predict behavioral responses from neuronal activity and investigating representations of information encoding in biological neural systems.</p>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/treewidth.jpg" alt="SAT-driven treewidth" loading="lazy">
-          <span class="project-badge">Research</span>
-        </div>
-        <div class="project-content">
-          <h3>Separator-Aware SAT Encoding for Exact Treewidth</h3>
-          <p class="project-meta">Algorithms · Graph Theory · SAT/MaxSAT</p>
-          <p class="project-desc">Developed a separator-aware encoding embedding safe graph decompositions into a single incremental SAT/MaxSAT framework. Achieved consistent empirical speedups over baseline encodings. Supervised by Prof. Grossglauser and Prof. Thiran (Grade: 6/6).</p>
-          <div class="project-links">
-            <a href="https://github.com/NaykinYT/Treewidth" target="_blank" rel="noopener">Code</a>
-            <a href="https://github.com/NaykinYT/Treewidth/blob/main/SAT_Driven_Exact_Treewidth_via_Safe_Separators_and_Structure_Aware_Encodings.pdf" target="_blank" rel="noopener">Paper</a>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80" alt="Neural information encoding" loading="lazy">
+            <span class="project-badge">Current Research</span>
           </div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/qwen-stem.jpg" alt="STEM tutor LLM" loading="lazy">
-        </div>
-        <div class="project-content">
-          <h3>Fine-Tuning Compact LLMs for STEM Education</h3>
-          <p class="project-meta">NLP · Large Language Models · Efficient Training</p>
-          <p class="project-desc">Fine-tuned Qwen3-0.6B into a domain-specialized STEM tutor using SFT, DPO, quantization, and RAG. Designed task-specific datasets and LLM-as-a-judge evaluation pipelines. Analyzed trade-offs between alignment, compression, and performance.</p>
-          <div class="project-links">
-            <a href="papers/qwen3-ft-paper.pdf" target="_blank" rel="noopener">Paper</a>
+          <div class="project-content">
+            <h3>Applied ML for Neural Information Encoding</h3>
+            <p class="project-meta">Computational Neuroscience · Representation Learning</p>
+            <p class="project-desc">Research Assistant at EPFL's Laboratory of Physics of Biological Systems. Developing ML models to predict behavioral responses from neuronal activity.</p>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/growth-faltering.jpg" alt="Growth faltering detection" loading="lazy">
-        </div>
-        <div class="project-content">
-          <h3>ML for Early Detection of Growth Faltering</h3>
-          <p class="project-meta">Applied ML · Healthcare · Large-Scale Data</p>
-          <p class="project-desc">Modeled longitudinal malnutrition prediction using 16M+ medical consultations from Burkina Faso. Evaluated Logistic Regression, Random Forest, and LightGBM. Final model: 96.68% accuracy, 76.54% F1 on binary classification.</p>
-          <div class="project-links">
-            <a href="papers/Machine%20Learning%20for%20Early%20Detection%20of%20Growth%20Faltering%20in%20Children%20Under%20Five.pdf" target="_blank" rel="noopener">Paper</a>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" alt="SAT-driven treewidth" loading="lazy">
+            <span class="project-badge">Research</span>
           </div>
-        </div>
-      </article>
+          <div class="project-content">
+            <h3>Separator-Aware SAT Encoding for Exact Treewidth</h3>
+            <p class="project-meta">Algorithms · Graph Theory · SAT/MaxSAT</p>
+            <p class="project-desc">Developed a separator-aware encoding embedding safe graph decompositions into a single incremental SAT/MaxSAT framework. Supervised by Prof. Grossglauser and Prof. Thiran (Grade: 6/6).</p>
+            <div class="project-links">
+              <a href="https://github.com/NaykinYT/Treewidth" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/NaykinYT/Treewidth/blob/main/SAT_Driven_Exact_Treewidth_via_Safe_Separators_and_Structure_Aware_Encodings.pdf" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/peerster.jpg" alt="Peerster distributed system" loading="lazy">
-          <span class="project-badge">Best in Class</span>
-        </div>
-        <div class="project-content">
-          <h3>Secure Decentralized P2P System (Peerster)</h3>
-          <p class="project-meta">Distributed Systems · Cryptography · FHE</p>
-          <p class="project-desc">Implemented decentralized messaging, file sharing, and consensus in Go. Integrated privacy-preserving distributed learning with fully homomorphic encryption. Best project grade (1st among 29 groups) in a cohort of 100+ Master's students.</p>
-          <div class="project-links">
-            <a href="papers/DSE-Report.pdf" target="_blank" rel="noopener">Report</a>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="STEM tutor LLM" loading="lazy">
           </div>
-        </div>
-      </article>
+          <div class="project-content">
+            <h3>Fine-Tuning Compact LLMs for STEM Education</h3>
+            <p class="project-meta">NLP · Large Language Models · Efficient Training</p>
+            <p class="project-desc">Fine-tuned Qwen3-0.6B into a domain-specialized STEM tutor using SFT, DPO, quantization, and RAG. Designed task-specific datasets and LLM-as-a-judge evaluation pipelines.</p>
+            <div class="project-links">
+              <a href="papers/qwen3-ft-paper.pdf" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/proximity.jpg" alt="Proximity hackathon" loading="lazy">
-          <span class="project-badge">2nd Place</span>
-        </div>
-        <div class="project-content">
-          <h3>Proximity — Decentralized Trust Graph</h3>
-          <p class="project-meta">SUI x BSA Hackathon 2024 · $20K Prize Pool</p>
-          <p class="project-desc">Designed a multi-component decentralized proximity detection system in 24h. Leveraged Bluetooth and blockchain for real-time, immutable on-chain trust graphs. Backend, web interface, and Move smart contracts for verifiable P2P presence proofs.</p>
-          <div class="project-links">
-            <a href="https://github.com/Proximity-Hackaton" target="_blank" rel="noopener">GitHub</a>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Growth faltering detection" loading="lazy">
           </div>
-        </div>
-      </article>
+          <div class="project-content">
+            <h3>ML for Early Detection of Growth Faltering</h3>
+            <p class="project-meta">Applied ML · Healthcare · Large-Scale Data</p>
+            <p class="project-desc">Modeled longitudinal malnutrition prediction using 16M+ medical consultations from Burkina Faso. Final model: 96.68% accuracy, 76.54% F1 on binary classification.</p>
+            <div class="project-links">
+              <a href="papers/Machine%20Learning%20for%20Early%20Detection%20of%20Growth%20Faltering%20in%20Children%20Under%20Five.pdf" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="assets/trustlink.jpg" alt="TrustLink escrow" loading="lazy">
-          <span class="project-badge">3rd Place</span>
-        </div>
-        <div class="project-content">
-          <h3>TrustLink — Secure Smart Contract Escrow</h3>
-          <p class="project-meta">SUI x BSA Hackathon 2023 · $25K Prize Pool</p>
-          <p class="project-desc">Built a Web3 escrow system in 24h. Implemented smart contract logic using Move's object-ownership model for trustless execution. Full-stack decentralized application with correctness and safety guarantees.</p>
-          <div class="project-links">
-            <a href="https://github.com/c0ntrolZ/TrustLink" target="_blank" rel="noopener">Code</a>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Peerster distributed system" loading="lazy">
+            <span class="project-badge">Best in Class</span>
           </div>
-        </div>
-      </article>
+          <div class="project-content">
+            <h3>Secure Decentralized P2P System (Peerster)</h3>
+            <p class="project-meta">Distributed Systems · Cryptography · FHE</p>
+            <p class="project-desc">Implemented decentralized messaging, file sharing, and consensus in Go. Integrated privacy-preserving distributed learning with fully homomorphic encryption.</p>
+            <div class="project-links">
+              <a href="papers/DSE-Report.pdf" target="_blank" rel="noopener">Report</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80" alt="Proximity hackathon" loading="lazy">
+            <span class="project-badge">2nd Place</span>
+          </div>
+          <div class="project-content">
+            <h3>Proximity — Decentralized Trust Graph</h3>
+            <p class="project-meta">SUI x BSA Hackathon 2024 · $20K Prize Pool</p>
+            <p class="project-desc">Designed a multi-component decentralized proximity detection system in 24h. Leveraged Bluetooth and blockchain for real-time, immutable on-chain trust graphs.</p>
+            <div class="project-links">
+              <a href="https://github.com/Proximity-Hackaton" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1622630998470-84d2466053ba?w=800&q=80" alt="TrustLink escrow" loading="lazy">
+            <span class="project-badge">3rd Place</span>
+          </div>
+          <div class="project-content">
+            <h3>TrustLink — Secure Smart Contract Escrow</h3>
+            <p class="project-meta">SUI x BSA Hackathon 2023 · $25K Prize Pool</p>
+            <p class="project-desc">Built a Web3 escrow system in 24h. Implemented smart contract logic using Move's object-ownership model for trustless execution.</p>
+            <div class="project-links">
+              <a href="https://github.com/c0ntrolZ/TrustLink" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="experience">
-      <h2>Experience</h2>
-      <div class="experience-grid">
-        <div class="exp-item">
-          <span class="exp-role">Incoming SWE Intern</span>
-          <span class="exp-company">Bloomberg — London</span>
-          <span class="exp-date">Summer 2026</span>
-        </div>
-        <div class="exp-item">
-          <span class="exp-role">Software Engineering Intern</span>
-          <span class="exp-company">Coherent Corp. — Zürich</span>
-          <span class="exp-desc">Apache Airflow pipelines, production monitoring, SAT-based scheduler design</span>
-        </div>
-      </div>
+    <section class="resume-section">
+      <h2>Resume</h2>
+      <p class="resume-intro"><a href="papers/YANNIK%20KRONE%20-%20CV.pdf" target="_blank" rel="noopener" class="cv-link">Full Resume in PDF</a></p>
+      <ul class="cv-timeline">
+        <li class="timeline-item direction-l">
+          <div class="time-wrapper"><span class="time">Summer 2026</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">Bloomberg</div>
+            <div class="desc">Incoming Software Engineering Intern — London</div>
+          </div>
+        </li>
+        <li class="timeline-item direction-r">
+          <div class="time-wrapper"><span class="time">2024 – 2025</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">Coherent Corp.</div>
+            <div class="desc">Software Engineering Intern — Zürich. Apache Airflow pipelines, production monitoring, SAT-based scheduler design.</div>
+          </div>
+        </li>
+        <li class="timeline-item direction-l">
+          <div class="time-wrapper"><span class="time">2023 – now</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">EPFL</div>
+            <div class="desc">MSc Computer Science</div>
+          </div>
+        </li>
+        <li class="timeline-item direction-r">
+          <div class="time-wrapper"><span class="time">2023 – now</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">EPFL LBS</div>
+            <div class="desc">Research Assistant — Laboratory of Physics of Biological Systems. Applied ML for neural information encoding.</div>
+          </div>
+        </li>
+        <li class="timeline-item direction-l">
+          <div class="time-wrapper"><span class="time">Summer 2024</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">SUI x BSA Hackathon</div>
+            <div class="desc">Proximity — 2nd Place ($20K Prize Pool)</div>
+          </div>
+        </li>
+        <li class="timeline-item direction-r">
+          <div class="time-wrapper"><span class="time">Summer 2023</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">SUI x BSA Hackathon</div>
+            <div class="desc">TrustLink — 3rd Place ($25K Prize Pool)</div>
+          </div>
+        </li>
+        <li class="timeline-item direction-l">
+          <div class="time-wrapper"><span class="time">2021</span></div>
+          <div class="flag-wrapper">
+            <div class="flag">Swiss Philosophy Olympiad</div>
+            <div class="desc">2nd Place — National Level</div>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="footer">
@@ -145,7 +187,11 @@
         <span>Python</span><span>C</span><span>C++</span><span>Go</span><span>Java</span><span>Scala</span><span>SQL</span>
       </div>
       <p class="achievement"><a href="https://frapp.ch/fr/articles/stories/deux-medailles-aux-olympiades-de-philosophie" target="_blank" rel="noopener" class="achievement-link">Swiss Philosophy Olympiad — 2nd Place (National, 2021)</a></p>
-      <a href="papers/YANNIK%20KRONE%20-%20CV.pdf" class="cv-link" target="_blank" rel="noopener">Resume</a>
+      <div class="social-links">
+        <a href="https://github.com/NaykinYT" target="_blank" rel="noopener" aria-label="GitHub" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yannik-krone-690a212b7" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:yannik.krone@epfl.ch" aria-label="Email" class="social-link"><i class="fas fa-envelope"></i></a>
+      </div>
     </section>
   </main>
 </body>
