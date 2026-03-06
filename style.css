@@ -163,15 +163,16 @@ main {
 
 .hero-content {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
 }
 
-@media (min-width: 560px) {
+@media (max-width: 320px) {
   .hero-content {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2.5rem;
+    flex-direction: column;
   }
 }
 
@@ -180,9 +181,11 @@ main {
   flex-direction: column;
   gap: 1rem;
   flex-shrink: 0;
+  width: 180px;
+  min-width: 180px;
 }
 
-@media (min-width: 560px) {
+@media (min-width: 480px) {
   .hero-left {
     width: 220px;
     min-width: 220px;
@@ -199,18 +202,13 @@ main {
 }
 
 .profile-photo {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 20px;
   display: block;
-}
-
-@media (min-width: 560px) {
-  .profile-photo {
-    width: 220px;
-    height: 220px;
-  }
 }
 
 .hero-quick {
@@ -250,9 +248,12 @@ main {
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
+  align-items: center;
+  width: 100%;
   padding-top: 1.5rem;
   margin-top: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
 }
 
 .interest-widget {
