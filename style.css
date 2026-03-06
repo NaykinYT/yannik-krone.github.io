@@ -763,23 +763,31 @@ h2 {
   }
 }
 
-.award-card:has(details[open]) .award-title,
-.award-card:has(details[open]) .award-meta,
-.award-card:has(details[open]) .award-desc {
+/* Open state: white background, dark text (match project cards) */
+.award-card:has(details[open]) .award-title {
   color: #1a1a1a;
 }
 
+.award-card:has(details[open]) .award-meta,
 .award-card:has(details[open]) .award-desc {
   color: #525252;
 }
 
-.award-card:has(details[open]) .award-meta {
+.award-card.award-hackathon:has(details[open]) .award-meta,
+.award-card.award-olympiad:has(details[open]) .award-meta {
   color: #525252;
 }
 
-.award-card:has(details[open]) .award-logo {
+.award-card:has(details[open]) .award-logo,
+.award-card.award-hackathon:has(details[open]) .award-logo,
+.award-card.award-olympiad:has(details[open]) .award-logo {
   color: #525252;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.award-card:has(details[open]) .expand-hint {
+  color: #737373;
+  opacity: 0.6;
 }
 
 .award-more {
