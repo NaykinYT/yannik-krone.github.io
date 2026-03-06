@@ -285,7 +285,7 @@ main {
 
 /* Section headers */
 h2 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -326,6 +326,10 @@ h2 {
 /* Single full-width card (e.g. Peerster) */
 .projects-grid-single {
   grid-template-columns: 1fr;
+}
+
+.projects-grid-single .project-image {
+  aspect-ratio: 21/9;
 }
 
 .project-card {
@@ -625,10 +629,11 @@ h2 {
 }
 
 .time {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: #f87171;
   display: inline-block;
+  letter-spacing: 0.02em;
 }
 
 .flag-wrapper {
