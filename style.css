@@ -285,7 +285,7 @@ main {
 
 /* Section headers */
 h2 {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -716,24 +716,25 @@ h2 {
 .awards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
 .award-card {
   position: relative;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: none;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.4s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.35s ease;
   text-align: left;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .award-card summary {
@@ -747,13 +748,19 @@ h2 {
 }
 
 .award-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.3);
 }
 
 .award-card:has(details[open]) {
   background: #ffffff;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 700px) {
+  .award-card:has(details[open]) {
+    transform: translateY(-4px);
+    z-index: 1;
+  }
 }
 
 .award-card:has(details[open]) .award-title,
@@ -777,7 +784,7 @@ h2 {
 
 .award-more {
   padding-top: 1rem;
-  margin-top: 0.5rem;
+  margin-top: -0.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   animation: projectReveal 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
