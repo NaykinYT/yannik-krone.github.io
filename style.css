@@ -34,37 +34,33 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-align: left;
 }
 
 main {
   width: 100%;
-  max-width: min(1280px, 94vw);
+  max-width: min(1600px, 96vw);
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
+  padding: clamp(2rem, 5vw, 3rem) clamp(2rem, 6vw, 4rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Section widgets — Apple-style glassmorphism */
+/* Section widgets — Apple-style glassmorphism, borderless */
 .section-widget {
   border-radius: 20px;
-  padding: 2rem clamp(1.75rem, 5vw, 3rem);
+  padding: 2rem clamp(2rem, 6vw, 4rem);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 
-    0 4px 24px -4px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(0, 0, 0, 0.05) inset;
+  border: none;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.2);
+  text-align: left;
 }
 
 .section-widget:hover {
-  box-shadow: 
-    0 12px 40px -12px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 0 1px rgba(0, 0, 0, 0.05) inset;
-  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.3);
 }
 
 .widget-hero {
@@ -141,14 +137,11 @@ main {
 
 .widget-footer {
   background: rgba(15, 15, 18, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: none;
 }
 
 .widget-footer:hover {
-  box-shadow: 
-    0 4px 24px -4px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(0, 0, 0, 0.05) inset;
-  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero */
@@ -160,15 +153,13 @@ main {
   position: relative;
   display: inline-block;
   margin-bottom: 1.5rem;
-  padding: 6px;
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.4), rgba(167, 139, 250, 0.3), rgba(244, 114, 182, 0.3));
+  padding: 5px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.25), rgba(167, 139, 250, 0.2), rgba(244, 114, 182, 0.2));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    0 16px 40px -12px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  border: none;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
 }
 
 .profile-photo {
@@ -212,8 +203,9 @@ main {
   font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.7;
-  max-width: 52ch;
+  max-width: 60ch;
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .interests-grid {
@@ -230,18 +222,17 @@ main {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: none;
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text);
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
 .interest-widget:hover {
-  border-color: rgba(96, 165, 250, 0.3);
   background: rgba(96, 165, 250, 0.1);
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.1);
+  box-shadow: 0 2px 12px -4px rgba(96, 165, 250, 0.2);
 }
 
 .interest-widget i {
@@ -293,17 +284,17 @@ h2 {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: none;
   border-radius: var(--radius);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.35s ease, border-color 0.2s;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.35s ease;
 }
 
 .project-card:hover {
-  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:has(details[open]) {
@@ -374,6 +365,7 @@ h2 {
   color: #404040;
   line-height: 1.65;
   margin-bottom: 0.75rem;
+  text-align: justify;
 }
 
 .project-card:has(details[open]) .project-more p {
@@ -476,6 +468,7 @@ h2 {
   color: var(--text-muted);
   margin-bottom: 0.75rem;
   line-height: 1.55;
+  text-align: justify;
 }
 
 .project-links {
@@ -685,19 +678,19 @@ h2 {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: none;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
 }
 
 .award-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.35);
 }
 
 .award-logo {
@@ -723,61 +716,43 @@ h2 {
   background: rgba(167, 139, 250, 0.15);
 }
 
-.award-type {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  margin-bottom: 0.25rem;
-}
-
-.award-org {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.award-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.award-rank {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.award-hackathon .award-rank {
-  color: #fbbf24;
-}
-
-.award-olympiad .award-rank {
-  color: #a78bfa;
-}
-
-.award-prize {
+.award-title {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
+  margin: 0;
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
 }
 
-.award-project {
+.award-meta {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
-.award-project a {
+.award-hackathon .award-meta {
+  color: #fbbf24;
+}
+
+.award-olympiad .award-meta {
+  color: #a78bfa;
+}
+
+.award-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.award-desc a {
   color: var(--accent);
   text-decoration: none;
 }
 
-.award-project a:hover {
+.award-desc a:hover {
   text-decoration: underline;
 }
 
