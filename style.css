@@ -323,8 +323,9 @@ h2 {
   }
 }
 
-.project-card-full-width {
-  grid-column: 1 / -1;
+/* Single full-width card (e.g. Peerster) */
+.projects-grid-single {
+  grid-template-columns: 1fr;
 }
 
 .project-card {
