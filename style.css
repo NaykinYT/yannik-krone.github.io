@@ -43,13 +43,24 @@ main {
   margin-bottom: 4rem;
 }
 
-.profile-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.25rem;
+.profile-photo-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--accent), #a78bfa, #f472b6);
+  border-radius: 22px;
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
 
 .hero h1 {
   font-size: clamp(2rem, 5vw, 2.75rem);
@@ -62,14 +73,45 @@ main {
   font-size: 1.125rem;
   color: var(--text-muted);
   font-weight: 400;
-  margin-bottom: 0.75em;
+  margin-bottom: 1rem;
 }
 
-.bio {
+.hero-about {
   font-size: 1rem;
   color: var(--text-muted);
-  max-width: 42ch;
-  font-weight: 400;
+  line-height: 1.7;
+  max-width: 52ch;
+  margin-bottom: 1.5rem;
+}
+
+.interests-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.interest-widget {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45em 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.interest-widget:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+  background: var(--accent-soft);
+}
+
+.interest-widget i {
+  font-size: 0.9em;
+  color: var(--accent);
 }
 
 /* Section headers */
@@ -85,6 +127,19 @@ h2 {
 /* Projects — 2-column grid with bigger images */
 .projects {
   margin-bottom: 4rem;
+}
+
+.project-category {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin: 2.5rem 0 1rem;
+}
+
+.project-category:first-of-type {
+  margin-top: 0;
 }
 
 .projects-grid {
