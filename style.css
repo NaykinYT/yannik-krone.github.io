@@ -540,6 +540,16 @@ h2 {
   color: #93c5fd;
 }
 
+.project-code-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.project-card:has(details[open]) .project-code-note {
+  color: #737373;
+}
+
 /* CV Timeline — tree structure (inspired by msaveski/www_personal) */
 .resume-section {
   margin-bottom: 0;
