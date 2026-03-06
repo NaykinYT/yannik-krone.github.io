@@ -100,13 +100,26 @@ h2 {
 }
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  transition: opacity 0.2s;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-elevated);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.35s ease;
+}
+
+.project-card:has(details[open]) {
+  background: #ffffff;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 700px) {
+  .project-card:has(details[open]) {
+    transform: translateY(-4px);
+    z-index: 1;
+  }
 }
 
 .project-card details {
@@ -126,24 +139,61 @@ h2 {
 
 .project-preview {
   padding: 1rem;
+  transition: color 0.35s ease;
+}
+
+.project-card:has(details[open]) .project-preview,
+.project-card:has(details[open]) .project-content h3,
+.project-card:has(details[open]) .project-meta,
+.project-card:has(details[open]) .project-desc {
+  color: #1a1a1a;
+}
+
+.project-card:has(details[open]) .project-desc,
+.project-card:has(details[open]) .project-meta {
+  color: #525252;
 }
 
 .project-more {
   padding: 0 1rem 1.25rem;
   margin-top: -0.5rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 1rem;
+  animation: projectReveal 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes projectReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-more p {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: #404040;
   line-height: 1.65;
   margin-bottom: 0.75rem;
 }
 
+.project-card:has(details[open]) .project-more p {
+  color: #404040;
+}
+
 .project-more p:last-child {
   margin-bottom: 0;
+}
+
+.project-card:has(details[open]) .project-links a {
+  color: #2563eb;
+}
+
+.project-card:has(details[open]) .project-links a:hover {
+  color: #1d4ed8;
 }
 
 .expand-hint {
@@ -154,15 +204,17 @@ h2 {
   color: var(--text-muted);
   margin-top: 0.5rem;
   opacity: 0.8;
+  transition: color 0.35s ease;
 }
 
-.project-card details[open] .expand-hint {
-  opacity: 0.5;
+.project-card:has(details[open]) .expand-hint {
+  opacity: 0.6;
+  color: #737373;
 }
 
 .expand-hint i {
   font-size: 0.65rem;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
 .project-card details[open] .expand-hint i {
@@ -203,6 +255,11 @@ h2 {
   -webkit-backdrop-filter: blur(8px);
   border-radius: 6px;
   color: var(--text);
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+.project-card:has(details[open]) .project-badge {
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .project-content h3 {
@@ -420,32 +477,80 @@ h2 {
   margin-bottom: 4rem;
 }
 
-.awards-list {
-  list-style: none;
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
 }
 
-.awards-list li {
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
+.award-card {
+  position: relative;
+  padding: 1.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-.awards-list li strong {
+.award-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.3);
+}
+
+.award-logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 10px;
+  margin-bottom: 0.25rem;
+}
+
+.award-hackathon .award-logo {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.award-olympiad .award-logo {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.15);
+}
+
+.award-prize {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: var(--text);
-  font-weight: 500;
+  line-height: 1.1;
 }
 
-.awards-list .achievement-link {
+.award-rank {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.award-name {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.award-name a {
   color: var(--accent);
   text-decoration: none;
-  margin-left: 0.25em;
 }
 
-.awards-list .achievement-link:hover {
+.award-name a:hover {
   text-decoration: underline;
 }
 
