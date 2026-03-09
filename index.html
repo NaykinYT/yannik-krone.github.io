@@ -12,8 +12,17 @@
   <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
+  <nav class="main-nav" id="main-nav">
+    <div class="main-nav-bar"></div>
+    <div class="main-nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#awards">Awards</a>
+    </div>
+  </nav>
   <main>
-    <section class="section-widget widget-hero">
+    <section class="section-widget widget-hero" id="about">
     <header class="hero">
       <h1 class="hero-name">Yannik Krone</h1>
       <div class="hero-content">
@@ -45,7 +54,7 @@
     </header>
     </section>
 
-    <section class="section-widget widget-projects projects" aria-label="Projects">
+    <section class="section-widget widget-projects projects" id="projects" aria-label="Projects">
       <h2>Projects</h2>
 
       <h3 class="project-category">Research</h3>
@@ -242,7 +251,7 @@
       </div>
     </section>
 
-    <section class="section-widget widget-resume resume-section">
+    <section class="section-widget widget-resume resume-section" id="resume">
       <h2>Resume</h2>
       <p class="resume-intro"><a href="papers/YANNIK%20KRONE%20-%20CV.pdf" target="_blank" rel="noopener" class="cv-link">Full Resume in PDF</a></p>
       <ul class="cv-timeline">
@@ -291,7 +300,7 @@
       </ul>
     </section>
 
-    <section class="section-widget widget-awards awards-section">
+    <section class="section-widget widget-awards awards-section" id="awards">
       <h2>Awards</h2>
       <div class="awards-grid">
         <div class="award-card award-hackathon">
@@ -360,6 +369,36 @@
     document.querySelectorAll('.project-links a, .award-more a').forEach(function(link) {
       link.addEventListener('click', function(e) { e.stopPropagation(); });
     });
+
+    (function() {
+      var nav = document.getElementById('main-nav');
+      var lastScrollY = window.scrollY;
+      var ticking = false;
+
+      function updateNav() {
+        var scrollY = window.scrollY;
+        if (scrollY > lastScrollY && scrollY > 80) {
+          nav.classList.add('nav-hidden');
+        } else {
+          nav.classList.remove('nav-hidden');
+        }
+        lastScrollY = scrollY;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateNav);
+          ticking = true;
+        }
+      });
+
+      document.querySelectorAll('.main-nav-links a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          nav.classList.remove('nav-hidden');
+        });
+      });
+    })();
   </script>
 </body>
 </html>
