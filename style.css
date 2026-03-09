@@ -61,10 +61,12 @@ html {
 
 .main-nav-links {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
-.main-nav-links a {
+.main-nav-links a,
+.main-nav-links .nav-projects-trigger {
   font-size: 0.85rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -75,7 +77,9 @@ html {
 }
 
 .main-nav-links a:hover,
-.main-nav-links a:focus {
+.main-nav-links a:focus,
+.main-nav-links .nav-projects-trigger:hover,
+.main-nav-links .nav-projects-trigger:focus {
   color: var(--accent);
 }
 
@@ -86,6 +90,18 @@ html {
 /* Projects dropdown — Research/Engineering/Personal only on hover */
 .nav-projects-wrapper {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-projects-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -0.5rem;
+  right: -0.5rem;
+  height: 0.6rem;
+  /* invisible bridge so cursor can reach panel without losing hover */
 }
 
 .nav-projects-trigger {
@@ -96,7 +112,7 @@ html {
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 0.5rem;
+  margin-top: 0.15rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -109,7 +125,7 @@ html {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease 0.18s, visibility 0.2s ease 0.18s; /* delay before hiding so user can reach subsections */
   z-index: 100;
 }
 
@@ -117,6 +133,7 @@ html {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transition-delay: 0s; /* show immediately on hover */
 }
 
 .nav-expand-item {
@@ -612,8 +629,10 @@ h2 {
 
 .project-schema img {
   width: 100%;
+  max-width: 420px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .project-schema figcaption {
