@@ -77,8 +77,9 @@
               </div>
             </summary>
             <div class="project-more">
-              <p>I develop machine learning models at the Laboratory of Physics of Biological Systems (LBS) to predict behavioral responses directly from neuronal activity. The work focuses on understanding how biological neural systems encode information and how we can learn representations that capture this encoding. This sits at the intersection of applied machine learning, computational neuroscience, and theoretical modeling—combining scalable learning systems with interpretable representations of neural activity.</p>
-              <p>Key directions include building encoding models that map stimuli to predicted neural responses, and decoding models that infer behavior from recorded activity, with applications to understanding information flow in neural circuits.</p>
+              <p>I develop machine learning models at the <a href="https://www.epfl.ch/labs/lpbs/" target="_blank" rel="noopener">Laboratory of Physics of Biological Systems</a> (LPBS) under <a href="https://www.epfl.ch/labs/lpbs/professor-rahi/" target="_blank" rel="noopener">Prof. Sahand Jamal Rahi</a>, to predict behavioral responses directly from neuronal activity. My focus is on the <strong>predictive modeling</strong> side: mapping time-series of neuronal activity to future and past behavior.</p>
+              <p>Working with <em>C. elegans</em> as a model organism, we use simultaneous neuronal and behavioral recordings from freely moving worms during chemotaxis. Second-layer interneurons (RIA, RIB, RIM) integrate sensory and internal signals; the goal is to understand how they encode behaviorally relevant information. My contribution centers on regression analyses: predicting the worm's <strong>current and future locomotion speed</strong> from interneuron activity. RIM and RIB together predict both forward and backward behavior; RIB alone emerges as a stronger predictor across individuals.</p>
+              <p>This sits at the intersection of applied machine learning, computational neuroscience, and time-series modeling—combining scalable learning systems with interpretable representations of how neural activity maps to behavior over time.</p>
             </div>
           </details>
         </article>
@@ -366,7 +367,7 @@
     </section>
   </main>
   <script>
-    document.querySelectorAll('.project-links a, .award-more a').forEach(function(link) {
+    document.querySelectorAll('.project-links a, .project-more a, .award-more a').forEach(function(link) {
       link.addEventListener('click', function(e) { e.stopPropagation(); });
     });
 
