@@ -167,9 +167,9 @@ body {
 
 main {
   width: 100%;
-  max-width: min(1920px, 98vw);
+  max-width: min(2200px, 99vw);
   margin: 0 auto;
-  padding: clamp(4rem, 8vw, 5rem) clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(4rem, 8vw, 5rem) clamp(1rem, 2vw, 1.75rem) clamp(2rem, 5vw, 3rem) clamp(1rem, 2vw, 1.75rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -178,7 +178,7 @@ main {
 /* Section widgets — Apple-style glassmorphism, borderless */
 .section-widget {
   border-radius: 12px;
-  padding: 2rem clamp(1.5rem, 3vw, 2.5rem);
+  padding: 2rem clamp(1.25rem, 2.5vw, 2rem);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: none;
