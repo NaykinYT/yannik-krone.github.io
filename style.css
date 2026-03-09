@@ -628,17 +628,35 @@ h2 {
   background: rgba(255, 255, 255, 0.02);
 }
 
-.project-schema-inline {
-  float: right;
-  max-width: 260px;
-  margin: 0.5rem 0 1rem 1.25rem;
+/* Split layout: text left, schema right on desktop; stacked on mobile */
+.project-more-split {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 0;
 }
 
-@media (max-width: 600px) {
-  .project-schema-inline {
-    float: none;
-    max-width: 100%;
-    margin: 1rem 0;
+.project-more-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-schema-side {
+  flex-shrink: 0;
+  width: 280px;
+  max-width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .project-more-split {
+    flex-direction: column;
+  }
+
+  .project-schema-side {
+    width: 100%;
+    max-width: 420px;
   }
 }
 
@@ -650,7 +668,7 @@ h2 {
   margin: 0 auto;
 }
 
-.project-schema-inline img {
+.project-schema-side img {
   max-width: 100%;
 }
 

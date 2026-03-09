@@ -77,7 +77,7 @@
                 <div class="project-content">
                   <h3>Applied ML for Neural Information Encoding</h3>
                   <p class="project-meta">Computational Neuroscience · Representation Learning</p>
-                  <p class="project-desc">Paid Research Assistant (researcher position) at EPFL's Laboratory of Physics of Biological Systems. Developing ML models to predict behavioral responses from neuronal activity.</p>
+                  <p class="project-desc">Mapping neuronal activity to behavior—ML models that predict how interneurons in <em>C. elegans</em> encode locomotion and chemotaxis from calcium imaging and behavioral recordings.</p>
                   <div class="project-links"><span class="project-code-note">Code not publicly available (academic/institutional constraints)</span></div>
                   <span class="expand-hint">Click for details <i class="fas fa-chevron-down"></i></span>
                 </div>
@@ -101,8 +101,8 @@
                 </div>
                 <div class="project-content">
                   <h3>Separator-Aware SAT Encoding for Exact Treewidth</h3>
-                  <p class="project-meta">12 ECTS Research Project · Algorithms · Graph Theory · SAT/MaxSAT</p>
-                  <p class="project-desc">12 ECTS research project (nearly half a semester) at EPFL's INDY lab. Developed a separator-aware SAT encoding embedding safe graph decompositions into an incremental SAT/MaxSAT framework. Supervised by Prof. Grossglauser and Prof. Thiran. Grade: 6/6.</p>
+                  <p class="project-meta">Algorithms · Graph Theory · SAT/MaxSAT</p>
+                  <p class="project-desc">A SAT-based exact treewidth solver that exploits safe graph separators—articulation points, cliques, almost-cliques—to decompose instances and encode width constraints, achieving empirical speedups over baseline encodings.</p>
                   <div class="project-links">
                     <a href="https://github.com/NaykinYT/Treewidth" target="_blank" rel="noopener">Code</a>
                     <a href="https://github.com/NaykinYT/Treewidth/blob/main/SAT_Driven_Exact_Treewidth_via_Safe_Separators_and_Structure_Aware_Encodings.pdf" target="_blank" rel="noopener">Paper</a>
@@ -138,7 +138,7 @@
                 <div class="project-content">
                   <h3>Fine-Tuning Compact LLMs for STEM Education</h3>
                   <p class="project-meta">NLP · Large Language Models · Efficient Training</p>
-                  <p class="project-desc">Group project (4). Fine-tuned Qwen3-0.6B-Base as a STEM tutor using DPO, SFT, LoRA, quantization, and RAG. Designed task-specific datasets and LLM-as-a-judge evaluation.</p>
+                  <p class="project-desc">Can a small LLM tutor STEM offline? Fine-tuned Qwen3-0.6B for efficient deployment using DPO, LoRA, quantization, and RAG—exploring how far sub-billion models can go for specialized tutoring.</p>
                   <div class="project-links">
                     <a href="papers/qwen3-ft-paper.pdf" target="_blank" rel="noopener">Paper</a>
                     <span class="project-code-note">Code not publicly available (academic reasons)</span>
@@ -171,7 +171,7 @@
                 <div class="project-content">
                   <h3>ML for Early Detection of Growth Faltering</h3>
                   <p class="project-meta">Applied ML · Healthcare · Large-Scale Data</p>
-                  <p class="project-desc">Group project (3) with the MLO lab. Longitudinal malnutrition prediction using 16M+ medical consultations from Burkina Faso (Terre des Hommes). Final LightGBM: 96.68% accuracy, 76.54% F1 on binary classification.</p>
+                  <p class="project-desc">Predicting malnutrition at a child's next visit from prior consultations—using 16M+ longitudinal records from Burkina Faso to enable early intervention in resource-limited settings.</p>
                   <div class="project-links">
                     <a href="papers/Machine%20Learning%20for%20Early%20Detection%20of%20Growth%20Faltering%20in%20Children%20Under%20Five.pdf" target="_blank" rel="noopener">Paper</a>
                     <span class="project-code-note">Code & data not publicly available (academic/confidentiality constraints)</span>
@@ -208,7 +208,7 @@
                 <div class="project-content">
                   <h3>Secure Distributed Computing</h3>
                   <p class="project-meta">Decentralized Systems Engineering · Distributed Systems · Cryptography · FHE</p>
-                  <p class="project-desc">Group project (3). Extended the Peerster P2P framework with privacy-preserving federated learning using xMK-CKKS homomorphic encryption. Best among 29 projects.</p>
+                  <p class="project-desc">Train a global model across devices without anyone—including the server—ever seeing individual updates. Extends Peerster with xMK-CKKS homomorphic encryption for private aggregation.</p>
                   <div class="project-links">
                     <a href="papers/DSE-Report.pdf" target="_blank" rel="noopener">Report</a>
                     <span class="project-code-note">Code not publicly available (academic reasons)</span>
@@ -218,19 +218,23 @@
               </div>
             </summary>
             <div class="project-more">
-              <p><strong>Course:</strong> <a href="https://edu.epfl.ch/coursebook/en/decentralized-systems-engineering-CS-438" target="_blank" rel="noopener">CS-438 Decentralized Systems Engineering</a> — taught by Prof. Pierluca Borsò and Prof. Bryan Ford. <strong>Group project of 3.</strong></p>
-              <p>Built on the <strong>Peerster</strong> framework—a decentralized P2P system in Go supporting messaging, file sharing, and consensus—this project extended it with <strong>privacy-preserving federated learning</strong>. The goal: train a global model across devices without any participant (including the aggregation server) ever seeing individual model updates. Traditional federated learning still leaks information via shared updates; we addressed this using <strong>xMK-CKKS</strong> (multi-key homomorphic encryption) so that only the aggregated sum can be decrypted.</p>
-              <p>The system operates under an <strong>honest-but-curious</strong> threat model. Each federated learning round follows three phases:</p>
-              <ul>
-                <li><strong>Phase 1 — Round initialization:</strong> The server proposes an aggregation round with <code>ProposeAggregationRound</code> (RoundParams); devices respond with <code>AcceptAggregationRound</code> and their public keys. The server waits until a target number of devices participate.</li>
-                <li><strong>Phase 2 — Encrypted training:</strong> The server sends <code>InitAggregationRound</code> (aggregated public keys, global weights). Devices train locally, encrypt their updates, and send <code>ModelUpdate</code> (encrypted weights). Alive heartbeats detect failures; early termination is supported.</li>
-                <li><strong>Phase 3 — Decryption and averaging:</strong> The server aggregates ciphertexts and broadcasts <code>ModelAggregation</code>. Devices send <code>DecryptionShare</code>; the server combines shares, recovers the sum, averages, and terminates with the new global weights.</li>
-              </ul>
-              <figure class="project-schema project-schema-inline">
-                <img src="assets/federated-learning-schema.png" alt="Federated learning round protocol: Server–Device phases for propose, train, aggregate, and decrypt">
-                <figcaption>Federated Learning Round — Three-phase protocol</figcaption>
-              </figure>
-              <p>Implementation details: message handlers for all aggregation messages; asynchronous training in Go routines; unicast for accept-messages to avoid congestion; broadcast for others; fault monitoring via <code>AliveMessage</code>. Encryption latency scales with model size and number of peers. Tested under varying topologies (normal, jammed, multiple concurrent rounds) with <strong>80.7% code coverage</strong>. <strong>Best project grade in class (1st among 29 groups)</strong> in a cohort of 100+ Master's students.</p>
+              <div class="project-more-split">
+                <div class="project-more-text">
+                  <p><strong>Course:</strong> <a href="https://edu.epfl.ch/coursebook/en/decentralized-systems-engineering-CS-438" target="_blank" rel="noopener">CS-438 Decentralized Systems Engineering</a> — taught by Prof. Pierluca Borsò and Prof. Bryan Ford. <strong>Group project of 3.</strong></p>
+                  <p>Built on the <strong>Peerster</strong> framework—a decentralized P2P system in Go supporting messaging, file sharing, and consensus—this project extended it with <strong>privacy-preserving federated learning</strong>. The goal: train a global model across devices without any participant (including the aggregation server) ever seeing individual model updates. Traditional federated learning still leaks information via shared updates; we addressed this using <strong>xMK-CKKS</strong> (multi-key homomorphic encryption) so that only the aggregated sum can be decrypted.</p>
+                  <p>The system operates under an <strong>honest-but-curious</strong> threat model. Each federated learning round follows three phases:</p>
+                  <ul>
+                    <li><strong>Phase 1 — Round initialization:</strong> The server proposes an aggregation round with <code>ProposeAggregationRound</code> (RoundParams); devices respond with <code>AcceptAggregationRound</code> and their public keys. The server waits until a target number of devices participate.</li>
+                    <li><strong>Phase 2 — Encrypted training:</strong> The server sends <code>InitAggregationRound</code> (aggregated public keys, global weights). Devices train locally, encrypt their updates, and send <code>ModelUpdate</code> (encrypted weights). Alive heartbeats detect failures; early termination is supported.</li>
+                    <li><strong>Phase 3 — Decryption and averaging:</strong> The server aggregates ciphertexts and broadcasts <code>ModelAggregation</code>. Devices send <code>DecryptionShare</code>; the server combines shares, recovers the sum, averages, and terminates with the new global weights.</li>
+                  </ul>
+                  <p>Implementation details: message handlers for all aggregation messages; asynchronous training in Go routines; unicast for accept-messages to avoid congestion; broadcast for others; fault monitoring via <code>AliveMessage</code>. Encryption latency scales with model size and number of peers. Tested under varying topologies (normal, jammed, multiple concurrent rounds) with <strong>80.7% code coverage</strong>. <strong>Best project grade in class (1st among 29 groups)</strong> in a cohort of 100+ Master's students.</p>
+                </div>
+                <figure class="project-schema project-schema-side">
+                  <img src="assets/federated-learning-schema.png" alt="Federated learning round protocol: Server–Device phases for propose, train, aggregate, and decrypt">
+                  <figcaption>Federated Learning Round — Three-phase protocol</figcaption>
+                </figure>
+              </div>
             </div>
           </details>
         </article>
@@ -249,7 +253,7 @@
                 <div class="project-content">
                   <h3>Proximity — Decentralized Trust Graph</h3>
                   <p class="project-meta">SUI x BSA Hackathon 2024 · $20K Prize Pool</p>
-                  <p class="project-desc">Designed a multi-component decentralized proximity detection system in 24h. Leveraged Bluetooth and blockchain for real-time, immutable on-chain trust graphs.</p>
+                  <p class="project-desc">Decentralized proximity detection—Bluetooth for presence verification, blockchain for real-time, immutable on-chain trust graphs of who was physically near whom.</p>
                   <div class="project-links">
                     <a href="https://github.com/Proximity-Hackaton" target="_blank" rel="noopener">GitHub</a>
                   </div>
@@ -275,7 +279,7 @@
                 <div class="project-content">
                   <h3>TrustLink — Secure Smart Contract Escrow</h3>
                   <p class="project-meta">SUI x BSA Hackathon 2023 · $25K Prize Pool</p>
-                  <p class="project-desc">Built a Web3 escrow system in 24h. Implemented smart contract logic using Move's object-ownership model for trustless execution.</p>
+                  <p class="project-desc">Trustless Web3 escrow—smart contracts on Sui/Move with modular object-ownership for multi-party exchanges with conditional release and expiration.</p>
                   <div class="project-links">
                     <a href="https://github.com/c0ntrolZ/TrustLink" target="_blank" rel="noopener">Code</a>
                   </div>
