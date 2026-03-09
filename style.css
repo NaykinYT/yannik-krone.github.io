@@ -570,6 +570,7 @@ h2 {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 1rem;
   animation: projectReveal 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  overflow: auto; /* contain floated schema */
 }
 
 @keyframes projectReveal {
@@ -627,12 +628,30 @@ h2 {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.project-schema-inline {
+  float: right;
+  max-width: 260px;
+  margin: 0.5rem 0 1rem 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .project-schema-inline {
+    float: none;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}
+
 .project-schema img {
   width: 100%;
   max-width: 420px;
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.project-schema-inline img {
+  max-width: 100%;
 }
 
 .project-schema figcaption {

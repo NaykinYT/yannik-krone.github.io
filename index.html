@@ -101,8 +101,8 @@
                 </div>
                 <div class="project-content">
                   <h3>Separator-Aware SAT Encoding for Exact Treewidth</h3>
-                  <p class="project-meta">Algorithms · Graph Theory · SAT/MaxSAT</p>
-                  <p class="project-desc">Developed a separator-aware encoding embedding safe graph decompositions into a single incremental SAT/MaxSAT framework. Supervised by Prof. Grossglauser and Prof. Thiran (Grade: 6/6).</p>
+                  <p class="project-meta">12 ECTS Research Project · Algorithms · Graph Theory · SAT/MaxSAT</p>
+                  <p class="project-desc">12 ECTS research project (nearly half a semester) at EPFL's INDY lab. Developed a separator-aware SAT encoding embedding safe graph decompositions into an incremental SAT/MaxSAT framework. Supervised by Prof. Grossglauser and Prof. Thiran. Grade: 6/6.</p>
                   <div class="project-links">
                     <a href="https://github.com/NaykinYT/Treewidth" target="_blank" rel="noopener">Code</a>
                     <a href="https://github.com/NaykinYT/Treewidth/blob/main/SAT_Driven_Exact_Treewidth_via_Safe_Separators_and_Structure_Aware_Encodings.pdf" target="_blank" rel="noopener">Paper</a>
@@ -112,8 +112,15 @@
               </div>
             </summary>
             <div class="project-more">
-              <p><strong>Treewidth</strong> is a central graph parameter measuring how "tree-like" a graph is; computing it exactly is NP-hard. This project implements a SAT-based exact treewidth solver that embeds safe graph decompositions into an incremental SAT/MaxSAT framework. The key innovation is a <strong>separator-aware encoding</strong> that uses safe separators (articulation points, clique separators, almost-cliques) to decompose the graph and integrate globally linked width constraints, preserving correctness across subinstances.</p>
-              <p>The implementation (Python 3.13+) supports multiple strategies: iterative binary search, iterative linear search, and MaxSAT—both in standard Berg–Järvisalo style and separator-aware variants. A <strong>hybrid solver</strong> combines separator decomposition with heuristic bounds and SAT enhancements. Benchmarked on PACE 2017 instances, Berg–Järvisalo graphs, and random graphs, the approach achieves consistent empirical speedups over baseline SAT encodings.</p>
+              <p><strong>Context:</strong> 12 ECTS research project (nearly half a semester) at the <a href="https://indy.epfl.ch/" target="_blank" rel="noopener">INDY Lab</a> (Information and Network Dynamics) at EPFL, supervised by <a href="https://people.epfl.ch/matthias.grossglauser" target="_blank" rel="noopener">Prof. Matthias Grossglauser</a> and <a href="https://people.epfl.ch/patrick.thiran" target="_blank" rel="noopener">Prof. Patrick Thiran</a>. Grade: 6/6.</p>
+              <p><strong>Treewidth</strong> is a central graph parameter measuring how "tree-like" a graph is; computing it exactly is NP-hard, yet bounded treewidth enables efficient algorithms for many NP-hard problems (CSP, SAT, probabilistic inference, etc.). This project implements a SAT-based exact treewidth solver that embeds <strong>safe graph decompositions</strong> into an incremental SAT/MaxSAT framework.</p>
+              <p>The key innovation is a <strong>separator-aware encoding</strong> that exploits graph structure before encoding:</p>
+              <ul>
+                <li><strong>Safe separators:</strong> Articulation points, clique separators, and almost-cliques are used to decompose the graph into smaller subinstances. Only bags that respect these separators are encoded, reducing the search space while preserving correctness.</li>
+                <li><strong>Globally linked width constraints:</strong> Width constraints are integrated across subinstances so that the encoding remains correct when solving decomposed fragments. This avoids invalid decompositions that can arise in naive decomposition-based encodings.</li>
+                <li><strong>Incremental framework:</strong> The solver reuses learned clauses across iterations (binary or linear search over the target width), and supports both SAT (decision) and MaxSAT (optimization) formulations.</li>
+              </ul>
+              <p>The implementation (Python 3.13+) supports multiple strategies: iterative binary search, iterative linear search, and MaxSAT—in both standard <strong>Berg–Järvisalo</strong> style and separator-aware variants. A <strong>hybrid solver</strong> combines separator decomposition with heuristic lower/upper bounds and SAT solver enhancements. Benchmarked on PACE 2017 instances, Berg–Järvisalo graphs, and random graphs, the approach achieves consistent empirical speedups over baseline SAT encodings, demonstrating that structure-aware decomposition pays off for exact treewidth computation.</p>
             </div>
           </details>
         </article>
@@ -130,8 +137,8 @@
                 </div>
                 <div class="project-content">
                   <h3>Fine-Tuning Compact LLMs for STEM Education</h3>
-                  <p class="project-meta">NLP · Large Language Models · Efficient Training</p>
-                  <p class="project-desc">Fine-tuned Qwen3-0.6B into a domain-specialized STEM tutor using SFT, DPO, quantization, and RAG. Designed task-specific datasets and LLM-as-a-judge evaluation pipelines.</p>
+                  <p class="project-meta">CS-552 · NLP · Large Language Models · Efficient Training</p>
+                  <p class="project-desc">Group project (4) for CS-552 Modern Natural Language Processing. Fine-tuned Qwen3-0.6B-Base as a STEM tutor using DPO, SFT, LoRA, quantization, and RAG. Designed task-specific datasets and LLM-as-a-judge evaluation.</p>
                   <div class="project-links">
                     <a href="papers/qwen3-ft-paper.pdf" target="_blank" rel="noopener">Paper</a>
                     <span class="project-code-note">Code not publicly available (academic reasons)</span>
@@ -141,8 +148,15 @@
               </div>
             </summary>
             <div class="project-more">
-              <p>I fine-tuned <strong>Qwen3-0.6B</strong> into a domain-specialized STEM tutor, targeting efficient deployment for educational use cases. The pipeline combined <strong>Supervised Fine-Tuning (SFT)</strong>, <strong>Direct Preference Optimization (DPO)</strong>, <strong>quantization</strong>, and <strong>Retrieval-Augmented Generation (RAG)</strong> to balance model capability with resource constraints.</p>
-              <p>I designed and curated task-specific training and evaluation datasets for STEM tutoring scenarios, and implemented structured evaluation pipelines including <strong>LLM-as-a-judge</strong> protocols to assess answer quality and pedagogical alignment. The work analyzed trade-offs between alignment quality, model compression, and downstream performance—exploring how far a sub-billion-parameter model can be pushed for specialized tutoring.</p>
+              <p><strong>Course:</strong> <a href="https://edu.epfl.ch/coursebook/en/modern-natural-language-processing-CS-552" target="_blank" rel="noopener">CS-552 Modern Natural Language Processing</a> — taught by <a href="https://people.epfl.ch/332696?lang=en" target="_blank" rel="noopener">Prof. Antoine Bosselut</a>. <strong>Group project of 4.</strong></p>
+              <p>The project asks: can a small LLM serve as a reliable STEM tutor in resource-constrained settings (e.g. offline, battery-limited)? We fine-tuned <strong>Qwen3-0.6B-Base</strong> using four interconnected components, targeting efficient deployment for educational use. A key finding: <strong>data quality outperformed quantity</strong>, and small models benefit from pipelines that diverge from standard large-model recipes.</p>
+              <ul>
+                <li><strong>Reward model:</strong> Aligned the base model with human preferences using <strong>Direct Preference Optimization (DPO)</strong>. Trained on mixed datasets (M1 human labels, HH-RLHF, Nectar, SHP, UltraFeedback, Math Stack Exchange). Best setup: DPO alone on Public/Light (32.3k pairs) with β=0.1—outperforming SFT→DPO. Evaluated with LightEval accuracy and AlpacaEval (GPT-4 as judge). Reward model reached <strong>64.01%</strong> on M1-Bench, <strong>88.82%</strong> on Reward/Stem-Bench vs. 45.65% / 57.86% for base Qwen.</li>
+                <li><strong>MCQA (Multiple-Choice QA):</strong> Trained three base variants (large 322k open-ended, medium with NuminaMath, small curated M1 1.3k). Applied <strong>LoRA</strong> adapters on 1k SciQ samples; best result: <strong>Quality M1 + LoRA</strong> (47.6% MMLU-STEM, 29.9% GPQA). LoRA on smaller, high-quality data beat full SFT on larger datasets—few adapter weights learn MCQ format without destabilizing the base model.</li>
+                <li><strong>Quantized model:</strong> Post-training quantization via BitsAndBytes (8bit/4bit). LoRA16 on MMLU with prompt-in-loss: 4bit kept <strong>44.7%</strong> accuracy vs. 49.7% bf16 while reducing VRAM. SmoothQuant and GPTQ (llmcompressor) underperformed. Quantization preserved accuracy for deployment on constrained devices.</li>
+                <li><strong>RAG:</strong> Built 12 retrieval corpora (QA-formatted, Wikipedia STEM, OpenStax textbook excerpts, hybrid OpenStax+SciQ+Wiki). Dense retrieval with <code>thenlper/gte-small</code>, top-k=5. Surprisingly, <strong>RAG consistently hurt accuracy</strong> vs. no-retrieval baseline (40.14%)—retrieved passages added noise; QA-formatted led to answer copying. Fine-tuning with retrieved docs in prompt (RA-DIT style) did not improve performance. OpenStax Enhanced reached 33.81%, still below baseline.</li>
+              </ul>
+              <p>Evaluation used LightEval on MMLU-STEM, GPQA, ARC, SciQ, and custom benchmarks. LLM-as-a-judge (AlpacaEval) validated preference alignment. Conclusion: sub-billion-parameter models can deliver strong STEM performance with the right strategy—DPO for alignment, LoRA for efficient format adaptation, quantization for deployment—but small models need different recipes than large ones.</p>
             </div>
           </details>
         </article>
@@ -156,8 +170,8 @@
                 </div>
                 <div class="project-content">
                   <h3>ML for Early Detection of Growth Faltering</h3>
-                  <p class="project-meta">Applied ML · Healthcare · Large-Scale Data</p>
-                  <p class="project-desc">Modeled longitudinal malnutrition prediction using 16M+ medical consultations from Burkina Faso. Final model: 96.68% accuracy, 76.54% F1 on binary classification.</p>
+                  <p class="project-meta">CS-433 · Applied ML · Healthcare · Large-Scale Data</p>
+                  <p class="project-desc">Group project (3) for CS-433 Machine Learning, with the MLO lab. Longitudinal malnutrition prediction using 16M+ medical consultations from Burkina Faso (Terre des Hommes). Final LightGBM: 96.68% accuracy, 76.54% F1 on binary classification.</p>
                   <div class="project-links">
                     <a href="papers/Machine%20Learning%20for%20Early%20Detection%20of%20Growth%20Faltering%20in%20Children%20Under%20Five.pdf" target="_blank" rel="noopener">Paper</a>
                     <span class="project-code-note">Code & data not publicly available (academic/confidentiality constraints)</span>
@@ -167,8 +181,16 @@
               </div>
             </summary>
             <div class="project-more">
-              <p>This project addressed <strong>early detection of growth faltering</strong> (malnutrition) in children under five, using a large-scale longitudinal dataset of over <strong>16 million medical consultations</strong> from Burkina Faso. The goal was to predict which children are at risk of growth faltering so interventions can be deployed earlier.</p>
-              <p>I evaluated multiple approaches—<strong>Logistic Regression</strong>, <strong>Random Forest</strong>, and <strong>LightGBM</strong>—for binary classification of growth faltering risk. The final model achieved <strong>96.68% accuracy</strong> and <strong>76.54% F1</strong>, balancing high recall for at-risk cases with precision. The work highlights the challenges of healthcare modeling at scale and the importance of interpretable, deployable models in resource-constrained settings. Code and data are not publicly available due to confidentiality constraints.</p>
+              <p><strong>Course:</strong> <a href="https://edu.epfl.ch/coursebook/en/machine-learning-CS-433" target="_blank" rel="noopener">CS-433 Machine Learning</a> — in collaboration with the <a href="https://www.epfl.ch/labs/mlo/" target="_blank" rel="noopener">Machine Learning and Optimization Laboratory (MLO)</a> at EPFL. <strong>Group project of 3.</strong></p>
+              <p>Malnutrition contributes to over 45% of deaths in children under five; the burden is most severe in resource-limited regions. This project leverages machine learning to <strong>predict malnutrition status at a child's next medical visit</strong> using data from prior consultations—enabling early detection and targeted interventions.</p>
+              <p>We use a dataset from <strong>Terre des Hommes</strong> containing ~16 million records of medical consultations for children under five in Burkina Faso. Features include anthropometric data (weight, height, mid-upper arm circumference, Z-scores), demographics, clinical conditions, and feeding practices. Malnutrition states: severe (with/without complications), moderate, or none—with severe cases under 2%, leading to strong class imbalance.</p>
+              <ul>
+                <li><strong>Temporal framework:</strong> We construct a longitudinal setup where data from previous visits are inputs and the next visit's result is the target. We predict within the next four months to exclude extreme visit intervals. Two strategies were explored: fixed-interval analysis and time-aware modeling (time-to-next-visit as a feature).</li>
+                <li><strong>Preprocessing:</strong> Feature selection; imputation (mode for categorical, mean for numerical); <strong>SMOTE</strong> for class balancing; one-hot encoding. We compare binary (malnutrition vs. no malnutrition) and multi-class setups—binary performs better due to reduced complexity.</li>
+                <li><strong>Models:</strong> Logistic Regression (baseline), Random Forest, and <strong>LightGBM</strong>. Evaluated with accuracy and macro F1; F1 is critical to balance precision (avoid false alarms) and recall (catch at-risk children).</li>
+                <li><strong>Visit frequency:</strong> Performance improves with more historical visits. Best configuration: <strong>3 visits</strong> (2 prior + target), with models trained on <strong>non-improving sequences only</strong> (worsening or unchanged malnutrition)—focusing on the most vulnerable cases. F1 improves significantly on this subset.</li>
+              </ul>
+              <p><strong>Results:</strong> LightGBM outperformed Random Forest and Logistic Regression. On the full dataset, the best model (3 visits, binary target, non-improving sequences) achieved <strong>96.68% accuracy</strong>, <strong>76.54% F1</strong>, 68.88% recall, and 98.22% precision. Multi-class: 96.14% accuracy, 52.15% macro F1. Our main contribution is extending prior work (BDHS, Ethiopian studies) to <strong>longitudinal data</strong> with multi-visit prediction. Future work could explore LSTMs or Transformers for richer temporal modeling. Code and data are not publicly available due to confidentiality.</p>
             </div>
           </details>
         </article>
@@ -186,7 +208,7 @@
                 <div class="project-content">
                   <h3>Secure Distributed Computing</h3>
                   <p class="project-meta">CS-438 · Decentralized Systems Engineering · Distributed Systems · Cryptography · FHE</p>
-                  <p class="project-desc">Group project (3) for <a href="https://edu.epfl.ch/coursebook/en/decentralized-systems-engineering-CS-438" target="_blank" rel="noopener">CS-438 Decentralized Systems Engineering</a>. Extended the Peerster P2P framework with privacy-preserving federated learning using xMK-CKKS homomorphic encryption. Best among 29 projects.</p>
+                  <p class="project-desc">Group project (3) for CS-438 Decentralized Systems Engineering. Extended the Peerster P2P framework with privacy-preserving federated learning using xMK-CKKS homomorphic encryption. Best among 29 projects.</p>
                   <div class="project-links">
                     <a href="papers/DSE-Report.pdf" target="_blank" rel="noopener">Report</a>
                     <span class="project-code-note">Code not publicly available (academic reasons)</span>
@@ -204,9 +226,9 @@
                 <li><strong>Phase 2 — Encrypted training:</strong> The server sends <code>InitAggregationRound</code> (aggregated public keys, global weights). Devices train locally, encrypt their updates, and send <code>ModelUpdate</code> (encrypted weights). Alive heartbeats detect failures; early termination is supported.</li>
                 <li><strong>Phase 3 — Decryption and averaging:</strong> The server aggregates ciphertexts and broadcasts <code>ModelAggregation</code>. Devices send <code>DecryptionShare</code>; the server combines shares, recovers the sum, averages, and terminates with the new global weights.</li>
               </ul>
-              <figure class="project-schema">
+              <figure class="project-schema project-schema-inline">
                 <img src="assets/federated-learning-schema.png" alt="Federated learning round protocol: Server–Device phases for propose, train, aggregate, and decrypt">
-                <figcaption>Federated Learning Round — Three-phase protocol between Server and Devices</figcaption>
+                <figcaption>Federated Learning Round — Three-phase protocol</figcaption>
               </figure>
               <p>Implementation details: message handlers for all aggregation messages; asynchronous training in Go routines; unicast for accept-messages to avoid congestion; broadcast for others; fault monitoring via <code>AliveMessage</code>. Encryption latency scales with model size and number of peers. Tested under varying topologies (normal, jammed, multiple concurrent rounds) with <strong>80.7% code coverage</strong>. <strong>Best project grade in class (1st among 29 groups)</strong> in a cohort of 100+ Master's students.</p>
             </div>
