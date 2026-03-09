@@ -17,13 +17,15 @@
     <div class="main-nav-links">
       <a href="#about">About</a>
       <div class="nav-projects-wrapper">
-        <a href="#projects">Projects</a>
-        <a href="#projects-research" class="nav-expand-item">Research</a>
-        <a href="#projects-engineering" class="nav-expand-item">Engineering</a>
-        <a href="#projects-personal" class="nav-expand-item">Personal</a>
+        <a href="#projects" class="nav-projects-trigger">Projects</a>
+        <div class="nav-expand-panel">
+          <a href="#projects-research" class="nav-expand-item">Research</a>
+          <a href="#projects-engineering" class="nav-expand-item">Engineering</a>
+          <a href="#projects-personal" class="nav-expand-item">Personal</a>
+        </div>
       </div>
-      <a href="#resume" class="nav-right-item">Resume</a>
-      <a href="#awards" class="nav-right-item">Awards</a>
+      <a href="#resume">Resume</a>
+      <a href="#awards">Awards</a>
     </div>
   </nav>
   <main>
@@ -183,8 +185,8 @@
                 </div>
                 <div class="project-content">
                   <h3>Secure Distributed Computing</h3>
-                  <p class="project-meta">Decentralized Systems Engineering · Distributed Systems · Cryptography · FHE</p>
-                  <p class="project-desc">Implemented decentralized messaging, file sharing, and consensus in Go. Integrated privacy-preserving distributed learning with fully homomorphic encryption. Best among 29 projects of the whole class.</p>
+                  <p class="project-meta">CS-438 · Decentralized Systems Engineering · Distributed Systems · Cryptography · FHE</p>
+                  <p class="project-desc">Group project (3) for <a href="https://edu.epfl.ch/coursebook/en/decentralized-systems-engineering-CS-438" target="_blank" rel="noopener">CS-438 Decentralized Systems Engineering</a>. Extended the Peerster P2P framework with privacy-preserving federated learning using xMK-CKKS homomorphic encryption. Best among 29 projects.</p>
                   <div class="project-links">
                     <a href="papers/DSE-Report.pdf" target="_blank" rel="noopener">Report</a>
                     <span class="project-code-note">Code not publicly available (academic reasons)</span>
@@ -194,8 +196,19 @@
               </div>
             </summary>
             <div class="project-more">
-              <p>Built on the <strong>Peerster</strong> framework—a decentralized P2P system in Go supporting messaging, file sharing, and consensus—this project extended it with <strong>privacy-preserving federated learning</strong>. The challenge: train a global model across devices without any participant (including the aggregation server) seeing individual model updates.</p>
-              <p>Using <strong>xMK-CKKS</strong> (multi-key homomorphic encryption), each device encrypts its local model updates before sharing. The server aggregates ciphertexts and obtains only the averaged weights after collaborative decryption—never seeing any single device's contributions. Implementation includes message handlers for aggregation rounds, key management, failure detection via heartbeats, and asynchronous training. Tested under varying network topologies with 80.7% code coverage. <strong>Best project grade in class (1st among 29 groups)</strong> in a cohort of 100+ Master's students.</p>
+              <p><strong>Course:</strong> <a href="https://edu.epfl.ch/coursebook/en/decentralized-systems-engineering-CS-438" target="_blank" rel="noopener">CS-438 Decentralized Systems Engineering</a> — taught by Prof. Pierluca Borsò and Prof. Bryan Ford. <strong>Group project of 3.</strong></p>
+              <p>Built on the <strong>Peerster</strong> framework—a decentralized P2P system in Go supporting messaging, file sharing, and consensus—this project extended it with <strong>privacy-preserving federated learning</strong>. The goal: train a global model across devices without any participant (including the aggregation server) ever seeing individual model updates. Traditional federated learning still leaks information via shared updates; we addressed this using <strong>xMK-CKKS</strong> (multi-key homomorphic encryption) so that only the aggregated sum can be decrypted.</p>
+              <p>The system operates under an <strong>honest-but-curious</strong> threat model. Each federated learning round follows three phases:</p>
+              <ul>
+                <li><strong>Phase 1 — Round initialization:</strong> The server proposes an aggregation round with <code>ProposeAggregationRound</code> (RoundParams); devices respond with <code>AcceptAggregationRound</code> and their public keys. The server waits until a target number of devices participate.</li>
+                <li><strong>Phase 2 — Encrypted training:</strong> The server sends <code>InitAggregationRound</code> (aggregated public keys, global weights). Devices train locally, encrypt their updates, and send <code>ModelUpdate</code> (encrypted weights). Alive heartbeats detect failures; early termination is supported.</li>
+                <li><strong>Phase 3 — Decryption and averaging:</strong> The server aggregates ciphertexts and broadcasts <code>ModelAggregation</code>. Devices send <code>DecryptionShare</code>; the server combines shares, recovers the sum, averages, and terminates with the new global weights.</li>
+              </ul>
+              <figure class="project-schema">
+                <img src="assets/federated-learning-schema.png" alt="Federated learning round protocol: Server–Device phases for propose, train, aggregate, and decrypt">
+                <figcaption>Federated Learning Round — Three-phase protocol between Server and Devices</figcaption>
+              </figure>
+              <p>Implementation details: message handlers for all aggregation messages; asynchronous training in Go routines; unicast for accept-messages to avoid congestion; broadcast for others; fault monitoring via <code>AliveMessage</code>. Encryption latency scales with model size and number of peers. Tested under varying topologies (normal, jammed, multiple concurrent rounds) with <strong>80.7% code coverage</strong>. <strong>Best project grade in class (1st among 29 groups)</strong> in a cohort of 100+ Master's students.</p>
             </div>
           </details>
         </article>
