@@ -39,9 +39,9 @@ body {
 
 main {
   width: 100%;
-  max-width: min(1600px, 96vw);
+  max-width: min(1920px, 98vw);
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem) clamp(2rem, 6vw, 4rem);
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -50,7 +50,7 @@ main {
 /* Section widgets — Apple-style glassmorphism, borderless */
 .section-widget {
   border-radius: 20px;
-  padding: 2rem clamp(2rem, 6vw, 4rem);
+  padding: 2rem clamp(1.5rem, 3vw, 2.5rem);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: none;
@@ -327,7 +327,7 @@ main {
 
 /* Section headers */
 h2 {
-  font-size: 1.5rem;
+  font-size: clamp(2.25rem, 8vw, 3.5rem);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -368,6 +368,7 @@ h2 {
 /* Single full-width card (e.g. Peerster) */
 .projects-grid-single {
   grid-template-columns: 1fr;
+  margin-top: 2.5rem;
 }
 
 .projects-grid-single .project-image {
