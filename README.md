@@ -9,7 +9,7 @@ Natural Language Processing · Machine Learning · Algorithms · Structural Meth
 
 I am a Master’s student in Computer Science at EPFL with research interests in **Natural Language Processing, Machine Learning, and graph algorithms**, with a particular focus on principled optimization and structural methods.
 
-I am currently a Visiting Researcher at MIT CSAIL in the ALFA Group (October 2026–present; planned completion April 2027), conducting my EPFL master’s thesis research under Una-May O’Reilly, working with Erik Hemberg, and co-supervised by Martin Jaggi at EPFL. My current research focuses on differentially private, Byzantine-robust decentralized federated learning; mechanistic interpretability is an additional research interest.
+I am currently a Visiting Researcher at MIT CSAIL in the ALFA Group (October 2026–present; planned completion April 2027), conducting my EPFL master’s thesis research under Una-May O’Reilly, working with Erik Hemberg, and co-supervised by Martin Jaggi at EPFL. My current research focuses on coevolutionary learning algorithms and mechanistic interpretability.
 
 Previously (March 2025–June 2026), I was a Research Assistant at EPFL’s Laboratory of Physics of Biological Systems, where I worked on applied machine learning models to predict behavioral responses from neuronal activity.
 
