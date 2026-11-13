@@ -9,7 +9,9 @@ Natural Language Processing · Machine Learning · Algorithms · Structural Meth
 
 I am a Master’s student in Computer Science at EPFL with research interests in **Natural Language Processing, Machine Learning, and graph algorithms**, with a particular focus on principled optimization and structural methods.
 
-I am currently a Research Assistant at EPFL’s Laboratory of Physics of Biological Systems, where I work on applied machine learning models to predict behavioral responses from neuronal activity.
+I am currently a Visiting Researcher at MIT CSAIL in the ALFA Group (October 2026–present; planned completion April 2027), conducting my EPFL master’s thesis research under Una-May O’Reilly, working with Erik Hemberg, and co-supervised by Martin Jaggi at EPFL. My current research focuses on differentially private, Byzantine-robust decentralized federated learning; mechanistic interpretability is an additional research interest.
+
+Previously (March 2025–June 2026), I was a Research Assistant at EPFL’s Laboratory of Physics of Biological Systems, where I worked on applied machine learning models to predict behavioral responses from neuronal activity.
 
 My work combines scalable learning systems with rigorous algorithmic reasoning, with applications ranging from large language model fine-tuning to SAT-based graph algorithms and combinatorial optimization.
 
@@ -17,16 +19,16 @@ This profile highlights selected research projects, publications, and technical 
 
 ---
 
-## Current Research
+## Past Research
 
 ### Applied Machine Learning for Neural Information Encoding  
 *Computational Neuroscience · Representation Learning · Behavioral Modeling*
 
-Research Assistant — EPFL Laboratory of Physics of Biological Systems  
+Research Assistant — EPFL Laboratory of Physics of Biological Systems (March 2025–June 2026)  
 
-- Developing machine learning models to predict behavioral responses from neuronal activity  
-- Investigating representations of information encoding in biological neural systems  
-- Working at the intersection of applied ML and theoretical modeling
+- Developed machine learning models to predict behavioral responses from neuronal activity  
+- Investigated representations of information encoding in biological neural systems  
+- Worked at the intersection of applied ML and theoretical modeling
 
 ---
 
@@ -126,9 +128,11 @@ https://github.com/c0ntrolZ/TrustLink
 
 ## Industry Experience
 
-### Bloomberg — Incoming Software Engineering Intern (London)
+### Bloomberg — Software Engineering Intern, June–September 2026, London
 
-Incoming Summer 2026.
+- Designed and evaluated eight Model Context Protocol (MCP) tools for financial workflows  
+- Built an LLM-as-a-judge evaluation pipeline across 150 benchmark workflows  
+- Received a return offer
 
 ---
 
