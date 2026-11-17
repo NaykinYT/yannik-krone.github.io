@@ -39,8 +39,8 @@ Research Assistant — EPFL Laboratory of Physics of Biological Systems (March 2
 
 - Developed a separator-aware encoding embedding safe graph decompositions into a single incremental SAT/MaxSAT framework  
 - Integrated globally linked width constraints to preserve correctness across subinstances  
-- Achieved consistent empirical speedups over baseline SAT encodings on standard benchmarks  
-- Supervised by Prof. Matthias Grossglauser and Prof. Patrick Thiran (Grade: 6/6)
+- Cut timeouts on about a thousand clustered graphs from 40% of runs (baseline encoding) to 7% and 2%; no gain on PACE 2017 instances  
+- Supervised by Sepehr Elahi, in the group led by Prof. Matthias Grossglauser and Prof. Patrick Thiran (Grade: 6/6)
 
 Paper:  
 [SAT-Driven Exact Treewidth via Safe Separators and Structure-Aware Encodings (PDF)](https://github.com/NaykinYT/Treewidth/blob/main/SAT_Driven_Exact_Treewidth_via_Safe_Separators_and_Structure_Aware_Encodings.pdf)
@@ -68,7 +68,8 @@ Code: Not publicly available (academic property restrictions)
 
 - Modeled longitudinal malnutrition prediction using 16M+ medical consultations  
 - Evaluated Logistic Regression, Random Forest, and LightGBM  
-- Final model achieved 96.68% accuracy and 76.54% F1 (binary classification)  
+- Best model reached a macro-F1 of 76.54% on children whose status had not improved; most malnourished cases were still missed  
+- ML4Science course project with the NGO Terre des hommes  
 
 Paper: [PDF](papers/Machine%20Learning%20for%20Early%20Detection%20of%20Growth%20Faltering%20in%20Children%20Under%20Five.pdf)  
 Code: Not publicly available (data confidentiality constraints)
@@ -80,12 +81,12 @@ Code: Not publicly available (data confidentiality constraints)
 ### Secure Decentralized Peer-to-Peer System (Peerster)  
 *Distributed Systems · Cryptography · Secure Computation*
 
-- Implemented decentralized messaging, file sharing, and consensus mechanisms in Go  
-- Integrated privacy-preserving distributed learning using fully homomorphic encryption (FHE)  
+- Added federated learning to Peerster, the gossip-based peer-to-peer system in Go built during the course  
+- Integrated multi-key homomorphic encryption (xMK-CKKS) so that the aggregator sees only the sum  
 - Best project grade in class (1st among 29 groups) in a cohort of 100+ Master’s students  
 
 Research Report:  
-[PDF](DSE-Report.pdf)
+[PDF](papers/DSE-Report.pdf)
 
 ---
 
@@ -131,20 +132,26 @@ https://github.com/c0ntrolZ/TrustLink
 ### Bloomberg — Software Engineering Intern, June–September 2026, London
 
 - Designed and evaluated eight Model Context Protocol (MCP) tools for financial workflows  
-- Built an LLM-as-a-judge evaluation pipeline across 150 benchmark workflows  
-- Received a return offer
+- Built an LLM-as-a-judge evaluation pipeline over 150 persona-generated questions requiring multi-step tool use  
+- Received a full-time return offer
 
 ---
 
-### Coherent Corp. — Software Engineering Intern (Zürich)
+### Coherent Corp. — Software Engineering Intern, July–September 2025, Zürich
 
-- Automated core production workflows using Python and SQL  
-- Built an Apache Airflow pipeline for production monitoring and anomaly detection  
-- Designed a production scheduler formulated as a combinatorial optimization problem and solved using a heuristic-driven SAT-based approach  
+- Automated five production processes in Python and SQL  
+- Built an Apache Airflow pipeline that monitors production data and raises alerts  
+- Built a site-wide production scheduler on Google OR-Tools (CP-SAT)  
 
 ---
 
 ## Additional Achievements
+
+### Fondation Vincent Merkle Scholarship (2026)
+
+Scholarship of about US$18,000 (CHF 15,000) for my research stay at MIT CSAIL.
+
+---
 
 ### Swiss Philosophy Olympiad — 2nd Place (National Level, 2021)
 
